@@ -346,7 +346,7 @@ extern "C" void* ThreadDumper(void*) {
       double stat[5]={0,0,0,0,0};
       for (vector<CAddrReport>::const_iterator it = v.begin(); it < v.end(); it++) {
         CAddrReport rep = *it;
-        fprintf(d, "%s,%d,%"PRId64",%.2f%%,%.2f%%,%.2f%%,%.2f%%,%.2f%%,%6i,%"PRIx64",%i \"%s\"\n", rep.ip.ToString().c_str(), rep.fGood, rep.lastSuccess, 100.0*rep.uptime[0], 100.0*rep.uptime[1], 100.0*rep.uptime[2], 100.0*rep.uptime[3], 100.0*rep.uptime[4], rep.blocks, rep.services, rep.clientVersion, rep.clientSubVersion.c_str());
+        fprintf(d, "%s,%d,%"PRId64",%.2f%%,%.2f%%,%.2f%%,%.2f%%,%.2f%%,%6i,%"PRIx64",%i %s\n", rep.ip.ToString().c_str(), rep.fGood, rep.lastSuccess, 100.0*rep.uptime[0], 100.0*rep.uptime[1], 100.0*rep.uptime[2], 100.0*rep.uptime[3], 100.0*rep.uptime[4], rep.blocks, rep.services, rep.clientVersion, rep.clientSubVersion.c_str());
         stat[0] += rep.uptime[0];
         stat[1] += rep.uptime[1];
         stat[2] += rep.uptime[2];
